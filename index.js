@@ -12,8 +12,12 @@ app.use('/assets/img', express.static(__dirname + '/src/assets/img'));
 app.use('/assets/fonts', express.static(__dirname + '/src/assets/fonts'));
 
 app.get('/', function(req, res) {
-  res.render('index', { title: 'Pug - Hands ON', message:{title: 'Olá Mundo!', message: 'Esse é um template BEM SIMPLES, só para servir de base para o nosso laboratório de Pug. Se você está lendo essa mensagem é porque todas as dependencias estão rodando. Parabéns!'}})
-});
+  try{
+    res.render('index', { title: 'Pug - Hands ON', message:{title: 'Olá Mundo!', message: 'Esse é um template BEM SIMPLES, só para servir de base para o nosso laboratório de Pug. Se você está lendo essa mensagem é porque todas as dependencias estão rodando. Parabéns!'}})
+  }catch(e){
+    res.status(500).send(e.toString() + JSON.stringify(process.env, null,4))
+  }
+  });
 
 app.listen( process.env.PORT || 8080, function () {
   console.log('Example app listening on port 3000!');
