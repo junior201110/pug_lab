@@ -15,6 +15,6 @@ app.get('/', function(req, res) {
   res.render('index', { title: 'Pug - Hands ON', message:{title: 'Olá Mundo!', message: 'Esse é um template BEM SIMPLES, só para servir de base para o nosso laboratório de Pug. Se você está lendo essa mensagem é porque todas as dependencias estão rodando. Parabéns!'}})
 });
 
-app.listen(3000, function () {
+app.listen(80, function () {
   console.log('Example app listening on port 3000!');
 });
