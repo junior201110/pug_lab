@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-html(lang="en")
-	head
-		meta(charset="UTF-8")
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		meta(http-equiv="X-UA-Compatible", content="ie=edge")
-		title= title
-
-		link(rel="stylesheet", href="assets/css/hello-world.css")
-	body
-		.content
-			h1= message.title
-			p= teste
+extends ../components/layout.pug
+block content
+    +carousel("myCarousel",[{image:"/assets/img/banner-1.png",h1:"Simple,Fresh & Unique Design",p:"Donec posuere augue venenatis",button:{caption:"Show More",url:"#"}},{image:"/assets/img/banner-2.png",h1:"Another example headline",p:"Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.",button:{caption:"Learn more",url:"#"}}])
