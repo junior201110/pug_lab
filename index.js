@@ -15,6 +15,7 @@ app.get('/', function(req, res) {
   try{
     res.send(JSON.stringify(process.env, null, 4))
   }catch(e){
+    res.set("content-type", "application/json")
     res.status(500).send(e.toString())
   }
   });
