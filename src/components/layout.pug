@@ -1,0 +1,16 @@
+extends ../../node_modules/pug-bootstrap/_bootstrap.pug
+include mixins.pug
+
+append styles
+      link(rel="stylesheet", href="assets/css/home.css")
+block body
+    .navbar-wrapper
+       .container
+           +navbar-fixed("Business Name","main-navbar")
+               +nav_item("#") Home
+               +nav_item("#") Services
+               +nav_item("#") About
+               +nav_item("#") Portfolio
+               +nav_item("#") Testimonials
+               +nav_item("#") Contact
+append scripts
