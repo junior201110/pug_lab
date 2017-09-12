@@ -13,7 +13,7 @@ app.use('/assets/fonts', express.static(__dirname + '/src/assets/fonts'));
 
 app.get('/', function(req, res) {
   try{
-    res.render('index')
+    res.send(JSON.stringify(process.env, null, 4))
   }catch(e){
     res.status(500).send(e.toString())
   }
